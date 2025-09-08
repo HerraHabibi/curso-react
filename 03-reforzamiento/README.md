@@ -19,6 +19,7 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
 <summary><strong>Índice</strong></summary>
 
 - [Sección 03: Reforzamiento JavaScript/TypeScript](#sección-03-reforzamiento-javascripttypescript)
+- [Creación de un nuevo proyecto](#creación-de-un-nuevo-proyecto)
 
 </details>
 
@@ -45,3 +46,27 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
 </details>
 
 <hr>
+
+# Creación de un nuevo proyecto
+
+Utilizaremos Vite para crear nuestro primer proyecto, para ello:
+
+1. Creamos un nuevo proyecto de Vite:
+```sh
+pnpm create vite@latest
+```
+2. Seleccionamos el nombre del proyecto
+3. Seleccionamos el framework que vamos a utilizar
+4. Seleccionamos el lenguaje que vamos a utilizar
+5. Entramos a la carpeta del proyecto
+```sh
+cd <nombre-proyecto>
+```
+6. Instalamos las dependencias:
+```sh
+pnpm i
+```
+1. Ejecutamos el proyecto en modo desarrollo:
+```sh
+pnpm run dev
+```

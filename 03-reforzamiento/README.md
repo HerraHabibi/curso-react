@@ -20,6 +20,14 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
 
 - [Sección 03: Reforzamiento JavaScript/TypeScript](#sección-03-reforzamiento-javascripttypescript)
 - [Creación de un nuevo proyecto](#creación-de-un-nuevo-proyecto)
+- [Estructura de directorios](#estructura-de-directorios)
+    - [index.html](#indexhtml)
+    - [src/](#src)
+    - [.gitignore](#gitignore)
+    - [tsconfig.json](#tsconfigjson)
+    - [package.json](#packagejson)
+    - [pnpm-lock.yaml](#pnpm-lockyaml)
+    - [node\_modules/](#node_modules)
 
 </details>
 
@@ -70,3 +78,52 @@ pnpm i
 ```sh
 pnpm run dev
 ```
+
+# Estructura de directorios
+
+### index.html
+
+El archivo **[index.html](index.html)** es el punto de entrada de nuestra aplicación, donde se renderizan los componentes de React, todo lo que programemos se inyectará en este archivo, en el div ``#app``.
+
+### src/
+
+En la carpeta **[src](src/)** almacenaremos todo el código de nuestra aplicación que creemos.
+
+### .gitignore
+
+El archivo **[.gitignore](.gitignore)** nos ayuda a ignorar ciertos archivos y carpetas a la hora de subir nuestro proyecto a un repositorio, es muy útil para archivos como ``.env`` o carpetas como ``node_modules``.
+
+### tsconfig.json
+
+El archivo **[tsconfig.json](tsconfig.json)** define las opciones de configuración para el compilador de TypeScript, como la versión de TypeScript, las opciones de compilación, etc.
+
+### package.json
+
+El archivo **[package.json](package.json)** indica datos sobre el proyecto como el nombre, la versión, las dependencias, etc. Además también se definen los scripts como puede ser el ``pnpm run dev`` o ``pnpm run build``.
+
+### pnpm-lock.yaml
+
+El archivo **[pnpm-lock.yaml](pnpm-lock.yaml)** indica cómo fue construido nuestros modulos de Node.js y se utiliza para recrear el proyecto de una forma sencilla.
+
+### node_modules/
+
+En la carpeta ``node_modules`` encontraremos todas las dependencias instaladas en nuestro proyecto, pero no todas nos harán falta a la hora de publicar nuestra aplicación.
+
+El archivo **[package.json](package.json)** nos puede ayudar a identificar qué dependencias son de desarrollo y cuáles son de producción de la siguiente manera:
+
+```json
+"devDependencies": {
+  "typescript": "~5.8.3",
+  "vite": "^7.1.2"
+}
+```
+
+```json
+"dependencies": {
+  "axios": "^1.6.8",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+}
+```
+
+Las ``devDependencies`` solo las utilizaremos a la hora de desarrollar el proyecto, mientras que las ``dependencies`` sí que llegarán al producto final de la aplicación.

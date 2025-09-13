@@ -5,10 +5,10 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
 <br>
 
 <div align="center">
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+  <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
     <img src="https://i.imgur.com/HV1ElY3.png" height="100">
   </a>
-  <a href="https://www.typescriptlang.org/docs">
+  <a target="_blank" href="https://www.typescriptlang.org/docs">
     <img src="https://i.imgur.com/5xxcxzk.png" height="100">
   </a>
 </div>
@@ -20,17 +20,7 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
 
 - [Creación de un nuevo proyecto](#creación-de-un-nuevo-proyecto)
 - [Estructura de directorios](#estructura-de-directorios)
-    - [index.html](#indexhtml)
-    - [src/](#src)
-    - [.gitignore](#gitignore)
-    - [tsconfig.json](#tsconfigjson)
-    - [package.json](#packagejson)
-    - [pnpm-lock.yaml](#pnpm-lockyaml)
-    - [node\_modules/](#node_modules)
 - [Variables y constantes](#variables-y-constantes)
-    - [let](#let)
-    - [const](#const)
-    - [Tipado fuerte](#tipado-fuerte)
 
 </details>
 

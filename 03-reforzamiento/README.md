@@ -18,7 +18,6 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
 <details>
 <summary><strong>Índice</strong></summary>
 
-- [Sección 03: Reforzamiento JavaScript/TypeScript](#sección-03-reforzamiento-javascripttypescript)
 - [Creación de un nuevo proyecto](#creación-de-un-nuevo-proyecto)
 - [Estructura de directorios](#estructura-de-directorios)
     - [index.html](#indexhtml)
@@ -28,6 +27,10 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
     - [package.json](#packagejson)
     - [pnpm-lock.yaml](#pnpm-lockyaml)
     - [node\_modules/](#node_modules)
+- [Variables y constantes](#variables-y-constantes)
+    - [let](#let)
+    - [const](#const)
+    - [Tipado fuerte](#tipado-fuerte)
 
 </details>
 
@@ -127,3 +130,61 @@ El archivo **[package.json](package.json)** nos puede ayudar a identificar qué 
 ```
 
 Las ``devDependencies`` solo las utilizaremos a la hora de desarrollar el proyecto, mientras que las ``dependencies`` sí que llegarán al producto final de la aplicación.
+
+# Variables y constantes
+
+Existen dos formas de declarar variables en JavaScript/TypeScript:
+- ``let``
+- ``const``
+
+Además de estas dos formas, también existe ``var`` pero **NUNCA** debemos utilizarla.
+
+### let
+
+Las variables ``let`` pueden cambiar de valor.
+
+```ts
+let x;
+
+x = 1;
+console.log(x); // 1
+
+x = 2;
+console.log(x); // 2
+```
+
+### const
+
+Las variables ``const`` no pueden cambiar de valor.
+
+```ts
+const x = 1;
+console.log(x); // 1
+
+x = 2; // Uncaught TypeError: Assignment to constant variable.
+```
+
+Las variables ``const``, al asignarle un valor que sea tipo string, TypeScript entenderá que su tipo será su valor. Esto lo podemos comprobar haciendo hover sobre la variable. Sin embargo, al comprobar su ``typeof`` veremos que su tipo es ``string``.
+
+```ts
+const nombre = 'HerraHabibi'; // Al hacer hover su tipo es 'HerraHabibi'
+console.log(typeof nombre); // 'string'
+```
+
+Si queremos que siempre muestre que su tipo es ``string`` podemos definir su tipo antes de asignarle un valor.
+
+```ts
+const nombre: string = 'HerraHabibi'; // Al hacer hover su tipo es 'string'
+console.log(typeof nombre); // 'string'
+```
+
+### Tipado fuerte
+
+En TypeScript no podemos cambiar el tipo de una variable.
+
+```ts
+let edad = 1;
+console.log(x); // 1
+
+edad = 'Hola!'; // Type 'string' is not assignable to type 'number'.
+```

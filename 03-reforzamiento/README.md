@@ -67,7 +67,7 @@ cd <nombre-proyecto>
 ```sh
 pnpm i
 ```
-1. Ejecutamos el proyecto en modo desarrollo:
+7. Ejecutamos el proyecto en modo desarrollo:
 ```sh
 pnpm run dev
 ```

@@ -21,6 +21,8 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
 - [Creación de un nuevo proyecto](#creación-de-un-nuevo-proyecto)
 - [Estructura de directorios](#estructura-de-directorios)
 - [Variables y constantes](#variables-y-constantes)
+- [Template String](#template-string)
+- [Objetos literales](#objetos-literales)
 
 </details>
 

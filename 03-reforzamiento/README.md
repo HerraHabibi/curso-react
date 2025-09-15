@@ -189,3 +189,116 @@ const oficio = 'programador';
 
 console.log(`Me llamo ${nombre} y soy ${oficio}`); // Me llamo HerraHabibi y soy programador
 ```
+
+# Objetos literales
+
+Si definimos un objeto como ``const`` podemos cambiar los valores de sus propiedades
+
+```ts
+const persona = {
+  nombre: 'HerraHabibi',
+  oficio: 'programador'
+};
+console.log(persona); // { nombre: 'HerraHabibi', oficio: 'programador' }
+
+persona.oficio = 'desarrollador';
+console.log(persona); // { nombre: 'HerraHabibi', oficio: 'desarrollador' }
+```
+
+Esto se debe a que lo que es constante es el objeto al que apunta en memoria, no el objeto que contiene las propiedades.
+
+```ts
+const persona = {
+  nombre: 'HerraHabibi',
+  oficio: 'programador'
+};
+
+persona = {
+  nombre: 'HerraHabibi',
+  oficio: 'desarrollador'
+}; // Uncaught TypeError: Assignment to constant variable.
+```
+
+### Clones de objetos
+
+Uno de los errores más comunes a la hora de hacer un clon es hacer lo siguiente:
+
+```ts
+const persona1 = {
+  nombre: 'Fernando',
+  edad: 31
+};
+
+const persona2 = persona1;
+
+persona2.nombre = 'Álex';
+persona2.edad = 21;
+
+console.log(persona1); // { nombre: 'Álex', edad: 21 }
+console.log(persona2); // { nombre: 'Álex', edad: 21 }
+```
+
+Esto hará que ambos objetos apunten a la misma memoria, lo cual es un error y los valores de ambos objetos serán los mismos por mucho que los cambiemos.
+
+<br>
+
+Para evitar esto podemos hacer lo siguiente:
+
+```ts
+const persona1 = {
+  nombre: 'Fernando',
+  edad: 31
+};
+
+const persona2 = {...persona1};
+
+persona2.nombre = 'Álex';
+persona2.edad = 21;
+
+console.log(persona1); // { nombre: 'Fernando', edad: 31 }
+console.log(persona2); // { nombre: 'Álex', edad: 21 }
+```
+
+Esta solución tiene un problema y es que en caso de que si el objeto tiene propiedades que son objetos, no se podrán clonar.
+
+```ts
+const persona1 = {
+  nombre: 'Fernando',
+  vehiculos: {
+    coche: 'Mazda',
+    moto: 'Honda'
+  }
+};
+
+const persona2 = {...persona1};
+
+persona2.nombre = 'Álex';
+persona2.vehiculos.coche = 'Opel';
+persona2.vehiculos.moto = 'Yamaha';
+
+console.log(persona1); // { nombre: 'Fernando', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
+console.log(persona2); // { nombre: 'Fernando', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
+```
+
+<br>
+
+Finalmente, para hacer un clon y evitar que todos estos problemas ocurran podemos hacer lo siguiente:
+
+```ts
+const persona1 = {
+  nombre: 'Fernando',
+  vehiculos: {
+    coche: 'Mazda',
+    moto: 'Honda'
+  }
+};
+
+const persona2 = structuredClone(persona1);
+
+persona2.nombre = 'Álex';
+persona2.vehiculos.coche = 'Opel';
+persona2.vehiculos.moto = 'Yamaha';
+
+console.log(persona1); // { nombre: 'Fernando', vehiculos: { coche: 'Mazda', moto: 'Honda' } }
+console.log(persona2); // { nombre: 'Álex', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
+```

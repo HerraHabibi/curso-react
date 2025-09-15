@@ -178,3 +178,14 @@ console.log(x); // 1
 
 edad = 'Hola!'; // Type 'string' is not assignable to type 'number'.
 ```
+
+# Template String
+
+Si queremos concatenar cadenas de texto que incluyan variables, podemos usar ``template strings`` y así no tendremos que concatenar con ``+``. Para ello, tenemos que usar backticks (`` ` ``) y para las variables usaremos un símbolo de dolar y entre llaves el nombre de la variable.
+
+```ts
+const nombre = 'HerraHabibi';
+const oficio = 'programador';
+
+console.log(`Me llamo ${nombre} y soy ${oficio}`); // Me llamo HerraHabibi y soy programador
+```

@@ -280,7 +280,7 @@ persona2.vehiculos.coche = 'Opel';
 persona2.vehiculos.moto = 'Yamaha';
 
 console.log(persona1); // { nombre: 'Fernando', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
-console.log(persona2); // { nombre: 'Fernando', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
+console.log(persona2); // { nombre: 'Álex', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
 ```
 
 <br>

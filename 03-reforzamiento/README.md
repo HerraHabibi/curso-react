@@ -23,6 +23,7 @@ Es importante tener una buena base de JavaScript y TypeScript para poder program
 - [Variables y constantes](#variables-y-constantes)
 - [Template String](#template-string)
 - [Objetos literales](#objetos-literales)
+- [Interfaces](#interfaces)
 
 </details>
 
@@ -303,4 +304,61 @@ persona2.vehiculos.moto = 'Yamaha';
 
 console.log(persona1); // { nombre: 'Fernando', vehiculos: { coche: 'Mazda', moto: 'Honda' } }
 console.log(persona2); // { nombre: 'Álex', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
+```
+
+# Interfaces
+
+Las interfaces son un tipo de objeto que nos permite definir qué propiedades debe tener un objeto y sus tipos.
+
+Si no cumple estos requisitos nos dará un error en VSCode, pero en el navegador no, ya que en JavaScript no existen las interfaces.
+
+```ts
+interface Persona {
+  nombre: string;
+  edad: number;
+  casado: boolean;
+};
+
+const persona1 = {
+  nombre: 'Fernando',
+  edad: 31,
+  casado: true
+};
+```
+
+En las interfaces que incluyen objetos dentro del objeto haremos lo siguiente:
+
+```ts
+interface Persona {
+  nombre: string;
+  vehiculos: Vehiculos;
+};
+
+interface Vehiculos {
+  coche: string;
+  moto: string;
+};
+
+const persona1 = {
+  nombre: 'Fernando',
+  vehiculos: {
+    coche: 'Mazda',
+    moto: 'Honda'
+  }
+};
+```
+
+Si queremos hacer un objeto con propiedades opcionales haremos lo siguiente:
+
+```ts
+interface Persona {
+  nombre: string;
+  apellido: string;
+  edad?: number;
+}
+
+const persona1 = {
+  nombre: 'Fernando',
+  apellido: 'García'
+};
 ```

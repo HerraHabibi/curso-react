@@ -1,28 +1,29 @@
-const persona = {
-  nombre: 'Alberto',
-  apellido: 'Sánchez',
-  edad: 23
-};
-console.log(persona);
-
-persona.edad = 24;
-console.log(persona);
-
-// -------------------------
-
-const persona1 = {
-  nombre: 'Fernando',
-  vehiculos: {
-    coche: 'Mazda',
-    moto: 'Honda'
+interface Persona {
+  nombre: string;
+  apellido: string;
+  edad: number;
+  direccion: {
+    codigoPostal: string;
+    calle: string;
   }
 };
 
-const persona2 = structuredClone(persona1);
+const persona1: Persona = {
+  nombre: 'Alberto',
+  apellido: 'Sánchez',
+  edad: 23,
+  direccion: {
+    codigoPostal: '1234',
+    calle: 'Calle Tulipán'
+  }
+};
 
-persona2.nombre = 'Álex';
-persona2.vehiculos.coche = 'Opel';
-persona2.vehiculos.moto = 'Yamaha';
-
-console.log(persona1); // { nombre: 'Fernando', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
-console.log(persona2); // { nombre: 'Álex', vehiculos: { coche: 'Opel', moto: 'Yamaha' } }
+const persona2: Persona = {
+  nombre: 'Marta',
+  apellido: 'Pérez',
+  edad: 51,
+  direccion: {
+    codigoPostal: '5678',
+    calle: 'Calle Amapola'
+  }
+};

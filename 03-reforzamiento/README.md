@@ -319,7 +319,7 @@ interface Persona {
   casado: boolean;
 };
 
-const persona1 = {
+const persona1: Persona = {
   nombre: 'Fernando',
   edad: 31,
   casado: true

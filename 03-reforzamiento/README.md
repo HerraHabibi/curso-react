@@ -339,7 +339,7 @@ interface Vehiculos {
   moto: string;
 };
 
-const persona1 = {
+const persona1: Persona = {
   nombre: 'Fernando',
   vehiculos: {
     coche: 'Mazda',
@@ -357,7 +357,7 @@ interface Persona {
   edad?: number;
 }
 
-const persona1 = {
+const persona1: Persona = {
   nombre: 'Fernando',
   apellido: 'García'
 };
